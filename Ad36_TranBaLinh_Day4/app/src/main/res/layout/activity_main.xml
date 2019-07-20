@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgr_main"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_150sdp"
+            android:paddingBottom="@dimen/_30sdp"
+            android:text="@string/title_login"
+            android:textAlignment="center"
+            android:textColor="@color/titleColor"
+            android:textSize="@dimen/_40sdp" />
+
+        <LinearLayout
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_person_black_40dp" />
+
+            <EditText
+                android:id="@+id/etLoginName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:hint="@string/hint_userName"
+                android:inputType="text"
+                android:maxLines="1"
+                android:maxLength="50"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_lock_black_40dp" />
+
+            <EditText
+                android:id="@+id/etPassWord"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:hint="@string/hint_passWord"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:maxLength="50"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_40sdp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnLogin"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/radius_button2"
+                android:src="@drawable/ic_check_black_40dp"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

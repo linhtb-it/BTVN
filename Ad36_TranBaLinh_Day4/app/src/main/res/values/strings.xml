@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">KFC food</string>
+    <string name="title_login">Đăng nhập</string>
+    <string name="hint_userName">Tài khoản</string>
+    <string name="hint_passWord">Mật khẩu</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="title_activity_content">KFC food</string>
+    <string name="title_list">Danh sách</string>
+    <string name="title_order">Giỏ hàng</string>
+    <string name="title_btn_order">Đặt hàng</string>
+    <string name="title_total">Tổng tiền</string>
+</resources>
