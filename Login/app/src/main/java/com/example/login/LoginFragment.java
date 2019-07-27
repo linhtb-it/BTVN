@@ -39,47 +39,50 @@ public class LoginFragment extends Fragment implements ILogin {
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = binding.etUser.getText().toString();
-                String pass = binding.etPass.getText().toString();
-                if (validateLogin()){
-                    presenter.onLogin(name, pass);
-                }
-                else {
-                    presenter.onLogin(name, pass);
+                if (validateLogin()) {
+                    presenter.onLogin(binding.etUser.getText().toString(), binding.etPass.getText().toString());
                 }
             }
         });
         return binding.getRoot();
     }
 
+    void focusPass() {
+        binding.etPass.requestFocus();
+        binding.etPass.setError(getResources().getString(R.string.error_pass));
+    }
+
+    void focusUser() {
+        binding.etUser.requestFocus();
+        binding.etUser.setError(getResources().getString(R.string.error_user));
+    }
+
     private boolean validateLogin() {
         boolean check = false;
         if (TextUtils.isEmpty(binding.etUser.getText().toString())) {
             check = false;
-            binding.etUser.requestFocus();
-            binding.etUser.setError(getResources().getString(R.string.error_user));
+            focusUser();
             return check;
         }
 
         if (TextUtils.isEmpty(binding.etPass.getText().toString())) {
             check = false;
-            binding.etPass.requestFocus();
-            binding.etPass.setError(getResources().getString(R.string.error_pass));
-
+            focusPass();
             return check;
         }
         String temp = binding.etPass.getText().toString();
-        if(temp.length() <6){
+        if (temp.length() < 6) {
+            focusPass();
             return check;
         }
         for (int i = 0; i < temp.length(); i++) {
             if ((int) temp.charAt(i) > 64 && (int) temp.charAt(i) < 91) {
-                check =  true;
+                check = true;
                 break;
-            }
-            else{
+            } else {
                 check = false;
-                if (i >= temp.length()){
+                if (i >= temp.length()) {
+                    focusPass();
                     return check;
                 }
             }
@@ -89,10 +92,10 @@ public class LoginFragment extends Fragment implements ILogin {
             if ((int) temp.charAt(i) > 47 && (int) temp.charAt(i) < 58) {
                 check = true;
                 break;
-            }
-            else{
+            } else {
                 check = false;
-                if (i >= temp.length()){
+                if (i >= temp.length()) {
+                    focusPass();
                     return check;
                 }
             }
@@ -101,10 +104,10 @@ public class LoginFragment extends Fragment implements ILogin {
             if ((int) temp.charAt(i) > 32 && (int) temp.charAt(i) < 48) {
                 check = true;
                 break;
-            }
-            else{
+            } else {
                 check = false;
-                if (i >= temp.length()){
+                if (i >= temp.length()) {
+                    focusPass();
                     return check;
                 }
             }
@@ -113,15 +116,17 @@ public class LoginFragment extends Fragment implements ILogin {
             if ((int) temp.charAt(i) > 57 && (int) temp.charAt(i) < 65) {
                 check = true;
                 break;
-            }
-            else{
+            } else {
                 check = false;
-                if (i >= temp.length()){
+                if (i >= temp.length()) {
+                    focusPass();
                     return check;
                 }
             }
         }
-
+        if(check == false){
+            focusPass();
+        }
         return check;
     }
 
@@ -132,6 +137,6 @@ public class LoginFragment extends Fragment implements ILogin {
 
     @Override
     public void onMessenger(String mess) {
-        Toast.makeText(getContext(), "Đăng nhập thất bại", Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "Đăng nhập thất bại"+mess, Toast.LENGTH_LONG).show();
     }
 }
