@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="hint_user">Tài khoản</string>
+    <string name="hint_pass">Mật khẩu</string>
+    <string name="txt_button_login">Đăng nhập</string>
+    <string name="txt_button_creat">Tạo tài khoản</string>
+    <string name="txt_forger_pass">Quên tài khoản hoặc mật khẩu ?</string>
+    <string name="error_user">Tài khoản không hợp lệ</string>
+    <string name="error_pass">Mật khẩu không hợp lệ</string>
+</resources>
